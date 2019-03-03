@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+
+
+ <div id="itemsContainer">
+   <h1><%= @phone.title %></h1>
+   <%= image_tag @phone.image_url, :class => 'welcomIm'  %>
+       <h2><%= @phone.description %></h1>
+   
+    <div class="itemhols">
+       <p>Price <%= number_to_currency(@phone.price, :unit => "€") %>
+       <br>
+        Category: <%= @phone.category %>
+        </p>
+       
+       <p>
+         <%= link_to 'Back',  phones_path, :class => "button", :role => "button" %>
+         <%= link_to 'Edit',  edit_phone_path(@phone), :class => "button", :role => "button" %>
+         
+       </p>
+        
+      </div>
+   
+   
+   </div>
