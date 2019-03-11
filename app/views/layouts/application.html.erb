@@ -18,14 +18,14 @@
   <body>
     
     <div class="w3-top">
-  <div class="w3-bar" id="myNavbar">
+  <div class="w3-bar" id="phonesNavbar">
     <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
       <i class="fa fa-bars"></i>
     </a>
     <%=link_to "HOME", "/", :class => "w3-bar-item w3-button" %>
-    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT US</a>
-    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-question-circle-o"></i> HELP</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-phone-square"></i> OUR PHONES</a>
+    <%=link_to "ABOUT US", about_path, :class => "w3-bar-item w3-button w3-hide-small" %>
+    <%=link_to "HELP", help_path, :class => "w3-bar-item w3-button w3-hide-small" %>
+    <%=link_to "OUR PHONES", "/phones", :class => "w3-bar-item w3-button w3-hide-small" %>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
       <i class="fa fa-search"></i>
     </a>
@@ -33,9 +33,15 @@
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT US</a>
+    
+    <%=link_to "ABOUT US", about_path, :class => "w3-bar-item w3-button" %>
+    <%=link_to "HELP", help_path, :class => "w3-bar-item w3-button" %>
+    <%=link_to "OUR PHONES", "/phones", :class => "w3-bar-item w3-button" %>
+    
+    <!-- <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT US</a>
     <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">HELP</a>
-    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">OUR PHONES</a>
+    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">OUR PHONES</a> -->
+    
     <a href="#" class="w3-bar-item w3-button">SEARCH</a>
   </div>
 </div>
@@ -43,32 +49,32 @@
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
   <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">KEVINS <span class="w3-hide-small">PHONE</span> SHOP</span>
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity"><span class="smallerHeading">KEVINS PHONE SHOP</span></span>
   </div>
 </div>
 
 
 
-    <!-- Liams HTML here --->
+    <!-- Liams HTML here 
     <header class="headSec">
       <h1>Kevins Phone Store</h1>
       
       <ul>
         <li><%=link_to "Home", "/", :class => "w3-bar-item w3-button" %></li>
-        <li><%=link_to "About", about_path %></li>
+        <li><%=link_to "About", about_path, :class => "w3-bar-item w3-button" %></li>
         <li><%=link_to "Help", help_path %></li>
         <li><%=link_to "Our Phones", "/phones" %></li>
         
       </ul>
       
       
-    </header>
+    </header> -->
 
     <div class="container">
     <%= yield %>
     </div>
 
-<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+<footer class="w3-center w3-black w3-padding-64">
   <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
   <div class="w3-xlarge w3-section">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
@@ -78,11 +84,30 @@
     <i class="fa fa-twitter w3-hover-opacity"></i>
     <i class="fa fa-linkedin w3-hover-opacity"></i>
   </div>
+  <p>©2019 Kevins Phone Shop</p>
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
 </footer>
     
+    <script>
     
-    
+    // ABOUT US PAGE ACCORDIAN FUNCTIONALITY - DOES NOT WORK WHEN PLACED IN application.js ???
+
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+    </script>
     
   </body>
 </html>

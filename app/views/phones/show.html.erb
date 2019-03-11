@@ -1,25 +1,42 @@
-<p id="notice"><%= notice %></p>
+<div id="noticePopup">
+<p id="notice"><%= notice %></p></div>
 
 
-
- <div id="itemsContainer">
-   <h1><%= @phone.title %></h1>
-   <%= image_tag @phone.image_url, :class => 'welcomIm'  %>
-       <h2><%= @phone.description %></h1>
+ <div class="w3-content w3-container w3-padding-64">
+  
+  <div class="w3-row w3-padding-32 w3-section">
+  
+  <div class="w3-col m4 w3-container">
    
-    <div class="itemhols">
+   
+   <%= image_tag @phone.image_url, :class => 'smallerImgs'  %>
+      
+   
+  </div>
+  
+   <div class="w3-col m8 w3-panel">
+    
+     <div class="phoneCols">
+      <h1><%= @phone.title %></h1>
+       <p><%= @phone.description %></p>
        <p>Price <%= number_to_currency(@phone.price, :unit => "€") %>
        <br>
         Category: <%= @phone.category %>
         </p>
        
        <p>
-         <%= link_to 'Back',  phones_path, :class => "button", :role => "button" %>
-         <%= link_to 'Edit',  edit_phone_path(@phone), :class => "button", :role => "button" %>
+         <%= link_to 'Back',  phones_path, :class => "w3-button w3-large w3-black", :role => "button" %>
+         <%= link_to 'Edit',  edit_phone_path(@phone), :class => "w3-button w3-large w3-black", :role => "button" %>
          
        </p>
         
       </div>
+    
+    
+   </div>
    
+   
+   
+   </div>
    
    </div>

@@ -52,11 +52,11 @@ li a {
 
 
 .container {
-      background: url("/assets/Site/clubhead.png");
+     /* background: url("/assets/Site/clubhead.png");
       background-repeat:no-repeat;
-      background-position:right bottom;
+      background-position:right bottom;*/
       width: 100%;
-      min-height: 700px;
+      min-height: 400px;
 }
 
 #itemsContainer {
@@ -86,8 +86,36 @@ li a {
     width: 22%;
     padding:10px;
     min-height: 300px;
+    
    
 }
+
+.phoneCols {
+    background-color: whitesmoke;
+    padding: 10px;
+    border-bottom: 2px grey solid;
+    margin-bottom: 10px;
+}
+
+.phoneCols h2 {
+    
+    padding-left: 10px;
+}
+
+.phoneCols img {
+    border: 1px solid lightgrey;
+}
+
+.bottomButtons {
+   text-align: center;
+   margin-top: 10px;
+}
+
+.smallerImgs {
+    width: 100%;
+    
+}
+
 
 
 .itemhols h1 {
@@ -145,20 +173,24 @@ input[type=text], select {
     box-sizing: border-box;
 }
 
+
 input[type=submit] {
-    width: 100%;
-    background-color: #4CAF50;
+    width: 20%;
+    background-color: #000;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-}
+} 
 
 input[type=submit]:hover {
-    background-color: #45a049;
+    background-color: #ccc;
+    color: #000;
 }
+
+
 
 /* MY OWN CSS FROM HERE ON */
 
@@ -196,7 +228,7 @@ body, html {
 }
 
 /* change nav bar color */
-#myNavbar {
+#phonesNavbar {
 	background-color: rgba(255, 255, 255, 0.7);
 
 }
@@ -211,3 +243,74 @@ body, html {
     min-height: 400px;
   }
 }
+
+#noticePopup {
+    display: none;
+    font-size: 30px;
+    text-align: center;
+    color: #000;
+    position: relative;
+    top:0;
+    width: 50%;
+    margin: 0 auto;
+    z-index: 99999;
+    background-color: rgba(0,0,0,0.2);
+    padding:20px;
+    border: 2px dashed darkgrey;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+
+/* tool tips css*/
+
+.wy-tooltip {
+	border: 1px solid #F1D031;
+	color: #444;
+	background: #FFFFA3;
+	box-shadow: 0 2px 3px #999;
+	position: absolute;
+	padding: 5px;
+	text-align: left;
+ 	border-radius: 5px;
+	 -moz-border-radius: 5px;
+	 -webkit-border-radius: 5px;
+}
+.wy-hide { display: none; }
